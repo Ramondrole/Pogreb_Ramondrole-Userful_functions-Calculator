@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramondrole - Калькулятор</title>
+    <link rel="icon" href="./Ramondrole.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">RAMONDROLE</div>
+        <div class="nav-links">
+            <a href="https://ramondrole.github.io/Pogreb_Ramondrole-About_me/" data-key="about">Обо мне</a>
+            <a href="https://ramondrole.github.io/Pogreb_Ramondrole-Games/" data-key="games">Наши игры</a>
+            <a href="https://ramondrole.github.io/Pogreb_Ramondrole-Userful_functions/" data-key="functions">Полезные функции</a>
+        </div>
+        <div class="language-switcher">
+            <button class="lang-btn" id="langBtn">🌐 RU</button>
+            <ul class="lang-dropdown">
+                <li><a href="#" data-lang="ru">🇷🇺 Русский</a></li>
+                <li><a href="#" data-lang="en">🇺🇸 English</a></li>
+                <li><a href="#" data-lang="de">🇩🇪 Deutsch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="calculator-wrapper">
+        <div class="mode-toggle">
+            <button class="mode-btn active-mode" id="basic-mode" data-key="basicMode">БАЗОВЫЙ</button>
+            <button class="mode-btn" id="scientific-mode" data-key="scientificMode">НАУЧНЫЙ</button>
+        </div>
+        
+        <div class="display-container">
+            <div class="history" id="history"></div>
+            <div class="display" id="display">0</div>
+        </div>
+        
+        <div class="buttons-grid" id="basic-buttons">
+            <button class="clear operator" data-action="clear">C</button>
+            <button class="clear operator" data-action="clear-entry">CE</button>
+            <button class="operator" data-action="backspace">⌫</button>
+            <button class="operator" data-action="divide">/</button>
+            <button class="operator" data-action="multiply">×</button>
+            
+            <button data-number="7">7</button>
+            <button data-number="8">8</button>
+            <button data-number="9">9</button>
+            <button class="operator" data-action="subtract">-</button>
+            <button class="function" data-action="square">x²</button>
+            
+            <button data-number="4">4</button>
+            <button data-number="5">5</button>
+            <button data-number="6">6</button>
+            <button class="operator" data-action="add">+</button>
+            <button class="function" data-action="sqrt">√</button>
+            
+            <button data-number="1">1</button>
+            <button data-number="2">2</button>
+            <button data-number="3">3</button>
+            <button class="equals operator" data-action="equals" rowspan="2">=</button>
+            <button class="function" data-action="power">x^y</button>
+            
+            <button data-number="0">0</button>
+            <button data-action="decimal">.</button>
+            <button class="function" data-action="pi">π</button>
+        </div>
+        
+        <div class="buttons-grid scientific-grid" id="scientific-buttons" style="display: none;">
+            <button class="function" data-action="sin">sin</button>
+            <button class="function" data-action="cos">cos</button>
+            <button class="function" data-action="tan">tan</button>
+            <button class="function" data-action="log">log</button>
+            <button class="function" data-action="ln">ln</button>
+            
+            <button class="function" data-action="asin">asin</button>
+            <button class="function" data-action="acos">acos</button>
+            <button class="function" data-action="atan">atan</button>
+            <button class="function" data-action="factorial">x!</button>
+            <button class="function" data-action="reciprocal">1/x</button>
+            
+            <button class="function" data-action="exp">e^x</button>
+            <button class="function" data-action="ten-power">10^x</button>
+            <button class="function" data-action="abs">|x|</button>
+            <button class="function" data-action="mod">mod</button>
+            <button class="function" data-action="rand">RND</button>
+            
+            <button class="function" data-action="deg-rad" id="degRadBtn">DEG</button>
+            <button class="function" data-action="memory-clear">MC</button>
+            <button class="function" data-action="memory-recall">MR</button>
+            <button class="function" data-action="memory-add">M+</button>
+            <button class="function" data-action="memory-subtract">M-</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
